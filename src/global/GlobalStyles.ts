@@ -15,4 +15,8 @@ export default createGlobalStyle`
     place-items: center;
     height: 100vh;
   }
+
+  .particles {
+    z-index: -1 !important;
+  }
 `

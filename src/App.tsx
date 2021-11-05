@@ -1,6 +1,7 @@
-import React, { createContext, useState } from 'react';
+import React, { createContext, useState } from 'react'
+import Particles, { HoverMode } from 'react-tsparticles'
 
-import GlobalStyles from './global/GlobalStyles';
+import GlobalStyles from './global/GlobalStyles'
 
 import { Container, PlayPauseButton, ResetButton, ViewFinder } from './components'
 
@@ -17,6 +18,31 @@ function App() {
   return (
     <>
       <GlobalStyles />
+      <Particles canvasClassName="particles" options={{
+        fpsLimit: 60,
+        particles: {
+          number: {
+            value: 50
+          },
+          size: {
+            value: 3
+          },
+          move: {
+            enable: true
+          },
+          lineLinked: {
+            enable: true
+          }
+        },
+        interactivity: {
+          events: {
+            onhover: {
+              enable: true,
+              mode: HoverMode.repulse
+            }
+          }
+        }
+      }} />
       <Container>
         <ViewFinderContext.Provider value={value}>
           <ViewFinder />
